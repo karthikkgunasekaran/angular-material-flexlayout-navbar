@@ -1,21 +1,40 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="root-container">
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Responsive Navigation</span>
+        <div fxFlex fxLayout fxLayoutAlign="end">
+            <div fxHide.lt-md>
+                <a href="#" mat-button>Products</a>
+                <a href="#" mat-button>Services</a>
+                <a href="#" mat-button>About</a>
+                <a href="#" mat-button>Contact</a>
+            </div>
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav fxHide.gt-sm>
+            <mat-nav-list>
+                <a href="#" mat-list-item>
+                    <mat-icon>build</mat-icon> Products
+                </a>
+                <a href="#" mat-list-item>
+                    <mat-icon>pages</mat-icon> Services
+                </a>
+                <a href="#" mat-list-item>
+                    <mat-icon>location_city</mat-icon> Company
+                </a>
+                <a href="#" mat-list-item>
+                    <mat-icon>contact_support</mat-icon> Contact
+                </a>
+                <a (click)="sidenav.toggle()" mat-list-item>
+                    <mat-icon>close</mat-icon> Close
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>
