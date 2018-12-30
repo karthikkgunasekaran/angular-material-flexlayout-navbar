@@ -3,29 +3,34 @@
         <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
             <mat-icon>menu</mat-icon>
         </button>
-        <span>Responsive Navigation</span>
+        <a [routerLink]="['/']" mat-button>
+            <h1>Navigation</h1>
+        </a>
         <div fxFlex fxLayout fxLayoutAlign="end">
             <div fxHide.lt-md>
-                <a href="#" mat-button>Products</a>
-                <a href="#" mat-button>Services</a>
-                <a href="#" mat-button>About</a>
-                <a href="#" mat-button>Contact</a>
+                <a [routerLink]="['/products']" mat-button>Products</a>
+                <a [routerLink]="['/services']" mat-button>Services</a>
+                <a [routerLink]="['/about']" mat-button>About</a>
+                <a [routerLink]="['/contact']" mat-button>Contact</a>
             </div>
         </div>
     </mat-toolbar>
     <mat-sidenav-container fxFlexFill>
         <mat-sidenav #sidenav fxHide.gt-sm>
             <mat-nav-list>
-                <a href="#" mat-list-item>
+                <a [routerLink]="['/']" mat-list-item>
+                    <mat-icon>home</mat-icon> Home
+                </a>
+                <a [routerLink]="['/products']" mat-list-item>
                     <mat-icon>build</mat-icon> Products
                 </a>
-                <a href="#" mat-list-item>
+                <a [routerLink]="['/services']" mat-list-item>
                     <mat-icon>pages</mat-icon> Services
                 </a>
-                <a href="#" mat-list-item>
+                <a [routerLink]="['/about']" mat-list-item>
                     <mat-icon>location_city</mat-icon> Company
                 </a>
-                <a href="#" mat-list-item>
+                <a [routerLink]="['/contact']" mat-list-item>
                     <mat-icon>contact_support</mat-icon> Contact
                 </a>
                 <a (click)="sidenav.toggle()" mat-list-item>

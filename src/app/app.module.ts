@@ -1,12 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule } from '@angular/flex-layout';
 
 //Utils
-import {MaterialModule} from './utils/material.module'
+import {AppRoutingModule } from './app-routing.module';
+import {MaterialModule} from './utils/material.module';
+
+//Feture Modules
+import {FeatureModule} from './feature/feature.module';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,8 @@ import {MaterialModule} from './utils/material.module'
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    FeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
