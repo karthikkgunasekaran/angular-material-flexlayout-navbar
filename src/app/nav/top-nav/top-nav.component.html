@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="onToggleSidenav()" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <a [routerLink]="['/']" mat-button>
+        <h1>Navigation</h1>
+    </a>
+    <div fxFlex fxLayout fxLayoutAlign="end">
+        <div fxHide.lt-md>
+            <a [routerLink]="['/products']" mat-button>Products</a>
+            <a [routerLink]="['/services']" mat-button>Services</a>
+            <a [routerLink]="['/about']" mat-button>About</a>
+            <a [routerLink]="['/contact']" mat-button>Contact</a>
+        </div>
+    </div>
+</mat-toolbar>

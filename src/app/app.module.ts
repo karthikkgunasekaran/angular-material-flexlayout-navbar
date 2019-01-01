@@ -7,8 +7,9 @@ import {FlexLayoutModule } from '@angular/flex-layout';
 //Utils
 import {AppRoutingModule } from './app-routing.module';
 import {MaterialModule} from './utils/material.module';
+import {NavModule} from './nav/nav.module';
 
-//Feture Modules
+//Feture Module
 import {FeatureModule} from './feature/feature.module';
 
 
@@ -19,6 +20,7 @@ import {FeatureModule} from './feature/feature.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NavModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,

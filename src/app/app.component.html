@@ -1,42 +1,8 @@
 <div class="root-container">
-    <mat-toolbar color="primary">
-        <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
-            <mat-icon>menu</mat-icon>
-        </button>
-        <a [routerLink]="['/']" mat-button>
-            <h1>Navigation</h1>
-        </a>
-        <div fxFlex fxLayout fxLayoutAlign="end">
-            <div fxHide.lt-md>
-                <a [routerLink]="['/products']" mat-button>Products</a>
-                <a [routerLink]="['/services']" mat-button>Services</a>
-                <a [routerLink]="['/about']" mat-button>About</a>
-                <a [routerLink]="['/contact']" mat-button>Contact</a>
-            </div>
-        </div>
-    </mat-toolbar>
+    <app-top-nav (sidenavToggle)="sidenav.toggle()"></app-top-nav>
     <mat-sidenav-container fxFlexFill>
         <mat-sidenav #sidenav fxHide.gt-sm>
-            <mat-nav-list>
-                <a [routerLink]="['/']" mat-list-item>
-                    <mat-icon>home</mat-icon> Home
-                </a>
-                <a [routerLink]="['/products']" mat-list-item>
-                    <mat-icon>build</mat-icon> Products
-                </a>
-                <a [routerLink]="['/services']" mat-list-item>
-                    <mat-icon>pages</mat-icon> Services
-                </a>
-                <a [routerLink]="['/about']" mat-list-item>
-                    <mat-icon>location_city</mat-icon> Company
-                </a>
-                <a [routerLink]="['/contact']" mat-list-item>
-                    <mat-icon>contact_support</mat-icon> Contact
-                </a>
-                <a (click)="sidenav.toggle()" mat-list-item>
-                    <mat-icon>close</mat-icon> Close
-                </a>
-            </mat-nav-list>
+            <app-side-nav (sidenavClose)="sidenav.close()"></app-side-nav>
         </mat-sidenav>
         <mat-sidenav-content fxFlexFill>
             <router-outlet></router-outlet>
