@@ -1,6 +1,8 @@
 # Navbar
 Responsive nav bar using Angular Material &amp; Angular Flex Layout
 
+Demo of this work is available at https://karthikkgunasekaran.github.io/angular-material-flexlayout-navbar/
+
 ## Versions:
 
 Angular - 7.1.0
